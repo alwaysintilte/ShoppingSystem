@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ввод штрих-кода</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .scan-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 20px; /* Отступ снизу перед кнопкой отмены */
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        .barcode-input {
+            margin-bottom: 50px; /* Большой отступ СНИЗУ поля ввода */
+        }
+
+        .barcode-input input {
+            width: 80%;
+            padding: 15px;
+            font-size: 1.2em;
+            text-align: center;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px; /* Дополнительный отступ сверху для кнопки */
+        }
+
+        .cancel-btn {
+            display: block;
+            width: 100%;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="scan-container">
+        <h1>Введите штрих-код вручную</h1>
+
+        <div class="barcode-input">
+            <input type="text" placeholder="Введите цифры штрих-кода" autofocus>
+        </div>
+
+        <button class="submit-btn">Добавить товар</button>
+    </div>
+
+    <a href="/" class="cancel-btn">Отмена</a>
+</div>
+
+<script>
+    document.querySelector('.submit-btn').addEventListener('click', function() {
+        const barcode = document.querySelector('.barcode-input input').value;
+        if(barcode) {
+            window.location.href = '/';
+        }
+    });
+</script>
+</body>
+</html>

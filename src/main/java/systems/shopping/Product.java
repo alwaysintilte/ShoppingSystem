@@ -1,0 +1,133 @@
+package systems.shopping;
+
+import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
+
+import java.time.LocalDate;
+import java.util.List;
+
+@Entity
+@Table(name = "products")
+public class Product {
+    public Product(){}
+    public Product(String name, String description, Integer barcode, String category, String brand, Double price, Integer discount, Double weight, List<String> contents) {
+        this.name = name;
+        this.description = description;
+        this.barcode = barcode;
+        this.category = category;
+        this.brand = brand;
+        this.price = price;
+        this.discount = discount;
+        this.weight = weight;
+        this.contents=contents;
+    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Integer id;
+    @Column(name = "name", nullable = false)
+    private String name;
+    @Column(name = "description", nullable = false)
+    private String description;
+
+    @Column(name = "barcode", nullable = false)
+    private Integer barcode;
+
+    @Column(name = "category", nullable = false)
+    private String category;
+
+    @Column(name = "brand", nullable = false)
+    private String brand;
+
+    @Column(name = "price", nullable = false)
+    private Double price;
+
+    @Column(name = "discount", nullable = false)
+    private Integer discount;
+
+    @Column(name = "weight", nullable = false)
+    private Double weight;
+
+    @Column(name = "contents", nullable = false)
+    private List<String> contents;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getBarcode() {
+        return barcode;
+    }
+
+    public void setBarcode(Integer barcode) {
+        this.barcode = barcode;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Integer getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Integer discount) {
+        this.discount = discount;
+    }
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
+
+    public List<String> getContents() {
+        return contents;
+    }
+
+    public void setContents(List<String> contents) {
+        this.contents = contents;
+    }
+}
