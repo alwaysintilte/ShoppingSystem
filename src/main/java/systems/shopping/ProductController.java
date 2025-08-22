@@ -19,11 +19,11 @@ public class ProductController {
     public void deleteByName(String name){
         productService.deleteByName(name);
     }
-    @PostMapping("/sticker")
+    @PostMapping("/product")
     public Product save(@RequestBody Product product){
         return productService.save(product);
     }
-    @PutMapping("/sticker")
+    @PutMapping("/product")
     public Product update(@RequestBody Product product){
         return productService.save(product);
     }
@@ -40,31 +40,32 @@ public class ProductController {
         return productService.findByName(name);
     }
     @GetMapping("/find/description/{description}")
-    public List<Product> findByDescription(String description){
+    public List<Product> findByDescription(@PathVariable String description){
         return productService.findByDescription(description);
     }
     @GetMapping("/find/barcode/{barcode}")
-    public Optional<Product> findByBarcode(Integer barcode){
+    public Optional<Product> findByBarcode(@PathVariable Integer barcode){
+        System.out.println("barcode: "+barcode);
         return productService.findByBarcode(barcode);
     }
     @GetMapping("/find/category/{category}")
-    public List<Product> findByCategory(String category){
+    public List<Product> findByCategory(@PathVariable String category){
         return productService.findByCategory(category);
     }
     @GetMapping("/find/brand/{brand}")
-    public List<Product> findByBrand(String brand){
+    public List<Product> findByBrand(@PathVariable String brand){
         return productService.findByBrand(brand);
     }
     @GetMapping("/find/price/{price}")
-    public List<Product> findByPrice(Double price){
+    public List<Product> findByPrice(@PathVariable Double price){
         return productService.findByPrice(price);
     }
     @GetMapping("/find/discount/{discount}")
-    public List<Product> findByDiscount(Integer discount){
+    public List<Product> findByDiscount(@PathVariable Integer discount){
         return productService.findByDiscount(discount);
     }
     @GetMapping("/find/weight/{weight}")
-    public List<Product> findByWeight(Double weight){
+    public List<Product> findByWeight(@PathVariable Double weight){
         return productService.findByWeight(weight);
     }
 }
