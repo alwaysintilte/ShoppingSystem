@@ -10,16 +10,15 @@ import java.util.List;
 @Table(name = "products")
 public class Product {
     public Product(){}
-    public Product(String name, String description, Integer barcode, String category, String brand, Double price, Integer discount, Double weight, List<String> contents) {
+    public Product(String name, String image_url, Integer barcode, String category, String brand, Double price, Integer discount, Double weight) {
         this.name = name;
-        this.description = description;
+        this.image_url = image_url;
         this.barcode = barcode;
         this.category = category;
         this.brand = brand;
         this.price = price;
         this.discount = discount;
         this.weight = weight;
-        this.contents=contents;
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,8 +26,9 @@ public class Product {
     private Integer id;
     @Column(name = "name", nullable = false)
     private String name;
-    @Column(name = "description", nullable = false)
-    private String description;
+
+    @Column(name = "image_url", nullable = false)
+    private String image_url;
 
     @Column(name = "barcode", nullable = false)
     private Integer barcode;
@@ -48,9 +48,6 @@ public class Product {
     @Column(name = "weight", nullable = false)
     private Double weight;
 
-    @Column(name = "contents", nullable = false)
-    private List<String> contents;
-
     public Integer getId() {
         return id;
     }
@@ -67,12 +64,12 @@ public class Product {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getImageUrl() {
+        return image_url;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setImageUrl(String image_url) {
+        this.image_url = image_url;
     }
 
     public Integer getBarcode() {
@@ -121,13 +118,5 @@ public class Product {
 
     public void setWeight(Double weight) {
         this.weight = weight;
-    }
-
-    public List<String> getContents() {
-        return contents;
-    }
-
-    public void setContents(List<String> contents) {
-        this.contents = contents;
     }
 }

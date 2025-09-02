@@ -1,7 +1,6 @@
 package systems.shopping;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,6 +16,12 @@ public class WebController {
     public ModelAndView QRcode() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("QRcode");
+        return modelAndView;
+    }
+    @RequestMapping("Search")
+    public ModelAndView Search() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("Search");
         return modelAndView;
     }
 }

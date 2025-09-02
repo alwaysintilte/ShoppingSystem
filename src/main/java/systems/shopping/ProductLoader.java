@@ -13,6 +13,6 @@ public class ProductLoader implements CommandLineRunner {
     }
     @Override
     public void run(String[] args){
-        productService.save(new Product("Молоко", "Молоко", 12345678, "Молоко", "Молоко", 123.4, 20, 123.4, List.of("Молоко","Молоко")));
+        productService.save(new Product("Молоко 2", "images/milk.png", 12345678, "Молоко", "Молоко", 123.4, 20, 123.4));
     }
 }

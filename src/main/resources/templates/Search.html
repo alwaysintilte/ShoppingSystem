@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск товаров по названию</title>
+    <link rel="stylesheet" href="styles/SearchStyle.css">
+</head>
+<body>
+<div class="container">
+    <h1>Поиск товаров по названию</h1>
+
+    <div class="search-header">
+        <input type="text" id="searchInput" class="search-input" placeholder="Введите название товара...">
+        <button id="searchBtn" class="search-btn">Найти</button>
+    </div>
+
+    <div class="search-results">
+        <div id="resultsContainer" class="products-grid"></div>
+    </div>
+
+    <a href="/" class="cancel-btn">Отмена</a>
+</div>
+<script src="scripts/SearchScript.js"></script>
+</body>
+</html>

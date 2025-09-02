@@ -9,8 +9,8 @@ import java.util.Optional;
 public interface ProductRepository extends JpaRepository<Product, Integer> {
     @Query("SELECT p FROM Product p WHERE p.name = :name")
     Optional<Product> findByName(String name);
-    @Query("SELECT p FROM Product p WHERE LOWER(p.description) = LOWER(:description)")
-    List<Product> findByDescription(String description);
+    @Query("SELECT p FROM Product p WHERE LOWER(p.image_url) = LOWER(:image_url)")
+    List<Product> findByImageUrl(String image_url);
     @Query("SELECT p FROM Product p WHERE p.barcode = :barcode")
     Optional<Product> findByBarcode(Integer barcode);
     @Query("SELECT p FROM Product p WHERE LOWER(p.category) = LOWER(:category)")
@@ -23,4 +23,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     List<Product> findByDiscount(Integer discount);
     @Query("SELECT p FROM Product p WHERE p.weight = :weight")
     List<Product> findByWeight(Double weight);
+    @Query("SELECT p FROM Product p WHERE LOWER(p.name) LIKE LOWER(CONCAT(:string, '%'))")
+    List<Product> findByString(String string);
 }

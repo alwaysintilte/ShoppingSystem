@@ -2,6 +2,7 @@ package systems.shopping;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.thymeleaf.expression.Strings;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,9 +40,9 @@ public class ProductController {
     public Optional<Product> findByName(@PathVariable String name){
         return productService.findByName(name);
     }
-    @GetMapping("/find/description/{description}")
-    public List<Product> findByDescription(@PathVariable String description){
-        return productService.findByDescription(description);
+    @GetMapping("/find/image_url/{image_url}")
+    public List<Product> findByImageUrl(@PathVariable String image_url){
+        return productService.findByImageUrl(image_url);
     }
     @GetMapping("/find/barcode/{barcode}")
     public Optional<Product> findByBarcode(@PathVariable Integer barcode){
@@ -67,5 +68,9 @@ public class ProductController {
     @GetMapping("/find/weight/{weight}")
     public List<Product> findByWeight(@PathVariable Double weight){
         return productService.findByWeight(weight);
+    }
+    @GetMapping("/find/string/{string}")
+    public List<Product> findByString(@PathVariable String string){
+        return productService.findByString(string);
     }
 }

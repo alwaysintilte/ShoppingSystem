@@ -32,8 +32,8 @@ public class ProductService {
     public Optional<Product> findByName(String name){
         return productRepository.findByName(name);
     }
-    public List<Product> findByDescription(String description){
-        return productRepository.findByDescription(description);
+    public List<Product> findByImageUrl(String image_url){
+        return productRepository.findByImageUrl(image_url);
     }
     public Optional<Product> findByBarcode(Integer barcode){
         return productRepository.findByBarcode(barcode);
@@ -52,5 +52,8 @@ public class ProductService {
     }
     public List<Product> findByWeight(Double weight){
         return productRepository.findByWeight(weight);
+    }
+    public List<Product> findByString(String string){
+        return productRepository.findByString(string);
     }
 }
